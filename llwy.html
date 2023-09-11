@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<title>柳浪闻莺</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 	</head>
 	<style>
 		body {
@@ -44,6 +45,7 @@
 		  text-decoration: none;
 		  z-index: 9999;
 		}
+		
 		
 		.menu {
 		  width: 25%;
@@ -105,7 +107,8 @@
 			padding: 5px 10px;
 		}
 		.llwy h2{
-			text-align:center;}
+			text-align: center;
+		}
 		.ll{
 			width: 25%;
 			height: 20%;
@@ -124,6 +127,37 @@
 			float: right;
 			margin-right: 10px;
 		}
+		/* 定义箭头样式 */
+		.arrow {
+		  font-size: 20px;
+		  vertical-align: middle;
+		}
+		
+		/* 定义按钮样式 */
+		.button {
+		  display: inline-block;
+		  padding: 5px 8px;
+		  border: none;
+		  border-radius: 3px;
+		  background-color: #9e9f9e;
+		  color: white;
+		  cursor: pointer;
+		  font-size: 8px;
+		}
+		.pagination  {
+		  position: fixed;
+		  bottom: 20px;
+		  left: 50%;
+		  transform: translateX(-50%);
+		}
+		
+		/* 定义按钮 hover 状态的样式 */
+		.button:hover {
+		  background-color: #959695;
+		}
+		.button i {
+		      font-size: 8px; /* 这里设置图标的大小 */
+		    }
 	</style>
 	<body>
 		<div class="container">
@@ -203,25 +237,41 @@
 			<p>每到阳春三月，绿柳笼烟时节，万树柳丝迎风飘舞，宛若翠浪翻空，碧波汹涌。这里的柳浪闻莺公园，四个友谊、闻莺、聚景、南园景区，布局开
 			朗、清新、雅丽、朴实。柳浪下拍打着着紫楠、雪松、广玉兰、碧桃、海棠、月季、梅花等异木名花。园东草地坪上耸立着“中日不再战”纪念碑，耸立
 			在日本樱花的雪海之中，为中日两国人民友好情谊的象征。园南隅有小山樵舍，是清代文人陈兆仑旧居。</p>
+			<div class="pagination">
+			    <a href="https://lwenxue.github.io/west_lfxz/lfxz.html" class="prev">
+					<!-- 上一页按钮 -->
+				  <button class="button" onclick="goToPreviousPage()">
+					<i class="arrow fas fa-chevron-left"></i>
+					上一页
+				  </button>
+				</a>
+			    <a href="#" class="next">
+					<!-- 下一页按钮 -->
+					<button class="button" onclick="goToNextPage()">
+										下一页
+					<i class="arrow fas fa-chevron-right"></i>
+					</button>
+				</a>
+			</div>
 		</div>
 	</body>
 	<script>
-		  document.addEventListener("DOMContentLoaded", function () {
-		    showNextImage();
-		  });
-		
-		  // 获取菜单图标和菜单的引用
-		  var menuIcon = document.querySelector(".menu-icon");
-		  var menu = document.querySelector(".menu");
-		
-		  // 点击事件处理程序
-		  menuIcon.addEventListener("click", function() {
-		    // 切换菜单栏的显示状态
-		    if (menu.style.left === "-100%") {
-		      menu.style.left = "0";
-		    } else {
-		      menu.style.left = "-100%";
-		    }
-		  });
+	  document.addEventListener("DOMContentLoaded", function () {
+	    showNextImage();
+	  });
+	
+	  // 获取菜单图标和菜单的引用
+	  var menuIcon = document.querySelector(".menu-icon");
+	  var menu = document.querySelector(".menu");
+	
+	  // 点击事件处理程序
+	  menuIcon.addEventListener("click", function() {
+	    // 切换菜单栏的显示状态
+	    if (menu.style.left === "-100%") {
+	      menu.style.left = "0";
+	    } else {
+	      menu.style.left = "-100%";
+	    }
+	  });
 	</script>
 </html>
